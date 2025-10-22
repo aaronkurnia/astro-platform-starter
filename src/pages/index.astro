@@ -4,7 +4,6 @@ import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
 
 歡迎來到 "我的時尚夢想"，這是我作為一名時尚設計系學生的個人網站，也是我實現夢想的一個小小舞台。我一直對時尚充滿熱情，因為它不只是衣服，更是一種語言，一種讓人用穿著表達自我、傳達情感與態度的方式。每一次創作，對我來說都是一次探索自己與世界的過程。
 
@@ -18,11 +17,3 @@ An Astro website can go way beyond static pages - on the right platform.
 `;
 ---
 
-<Layout title="歡迎來到 "我的時尚夢想".">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">我的時尚夢想</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
-</Layout>
