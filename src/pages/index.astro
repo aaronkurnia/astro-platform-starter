@@ -83,10 +83,11 @@ import Markdown from '../components/Markdown.astro';
   </section>
 </Layout>
 
-  <h2>Content Calendar</h2>
-  <p>Plan at least two posts per week for the next four weeks, including topic, materials, and target metrics.</p>
+<section id="content-calendar">
+  <h2>內容行事曆</h2>
 
-  <table border="1" cellpadding="8" cellspacing="0">
+
+  <table class="calendar-table">
     <thead>
       <tr>
         <th>週次</th>
@@ -130,7 +131,7 @@ import Markdown from '../components/Markdown.astro';
         <td>第 3 週</td>
         <td>熱賣商品 Mix&Match 推薦</td>
         <td>多圖輪播、商品細節照</td>
-        <td>網站導流（link click）、互動數</td>
+        <td>網站導流（點擊連結）、互動數</td>
       </tr>
       <tr>
         <td>第 4 週</td>
@@ -147,3 +148,23 @@ import Markdown from '../components/Markdown.astro';
     </tbody>
   </table>
 </section>
+
+<style>
+  /* 內容行事曆表格樣式 */
+  #content-calendar table {
+    border-collapse: collapse; /* 邊框合併 */
+    width: 100%; /* 滿版寬度 */
+    margin-top: 10px;
+  }
+
+  #content-calendar th,
+  #content-calendar td {
+    border: 1px solid #333; /* 每個格子都有邊框 */
+    padding: 8px; /* 內距 */
+    text-align: left; /* 文字靠左 */
+  }
+
+  #content-calendar th {
+    background-color: #f2f2f2; /* 表頭淺灰色 */
+  }
+</style>
