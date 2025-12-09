@@ -14,6 +14,7 @@
       background: #fafafa;
     }
 
+    /* Header */
     header {
       background: #111;
       color: white;
@@ -21,21 +22,43 @@
       text-align: center;
     }
 
+    /* Navigation Menu */
     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
       background: #222;
-      padding: 10px 20px;
+      z-index: 1000;
+      padding: 10px 0;
     }
 
-    nav a {
+    nav ul {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
       color: white;
-      margin-right: 20px;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s;
     }
 
+    nav ul li a:hover {
+      color: #ff6347;
+    }
+
+    /* Offset for fixed nav */
     main {
       display: flex;
-      padding: 20px;
+      padding: 100px 20px 20px 20px; /* top padding accounts for nav height */
       gap: 20px;
     }
 
@@ -80,6 +103,11 @@
     th {
       background-color: #f2f2f2;
     }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
@@ -92,11 +120,14 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="#highlights">重點摘要</a>
-    <a href="#concept">設計理念</a>
-    <a href="#strategy">行銷策略</a>
-    <a href="#outcomes">預期效果</a>
-    <a href="#content-calendar">內容行事曆</a>
+    <ul>
+      <li><a href="#highlights">重點摘要</a></li>
+      <li><a href="#concept">設計理念</a></li>
+      <li><a href="#strategy">行銷策略</a></li>
+      <li><a href="#outcomes">預期效果</a></li>
+      <li><a href="#stats">成效追蹤</a></li>
+      <li><a href="#post-list">發文清單</a></li>
+    </ul>
   </nav>
 
   <!-- MAIN CONTENT -->
@@ -206,7 +237,7 @@
         </ul>
       </section>
 
-      <section>
+      <section id="stats">
         <h2>成效追蹤</h2>
         <table class="stats-table">
           <thead>
@@ -224,8 +255,7 @@
         </table>
       </section>
 
-      <!-- POST LIST TABLE INSERTED HERE -->
-      <section>
+      <section id="post-list">
         <h2>發文清單（Post List）</h2>
         <table>
           <thead>
