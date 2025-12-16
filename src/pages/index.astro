@@ -237,3 +237,28 @@ function openTab(evt, tabId) {
 
 </body>
 </html>
+
+<!-- TAB SWITCHING -->
+<div class="tab-wrapper">
+
+  <!-- TAB HEADERS (using h2) -->
+  <div class="tab-headers">
+    <h2 class="tab-title active" onclick="openTab('tab-resume')">個人履歷</h2>
+    <h2 class="tab-title" onclick="openTab('tab-ig')">Instagram 粉絲專頁</h2>
+  </div>
+
+  <!-- TAB CONTENT: RESUME -->
+  <div id="tab-resume" class="tab-content active">
+    <!-- KEEP ALL YOUR ORIGINAL CONTENT HERE -->
+  </div>
+
+  <!-- TAB CONTENT: IG -->
+  <div id="tab-ig" class="tab-content">
+    <iframe
+      src="https://www.instagram.com/f4shionf4np4ge/embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</div>
+
