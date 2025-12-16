@@ -1,162 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的時尚夢想｜個人粉絲專頁</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的時尚夢想｜個人網頁</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.7;
-      background: #fafafa;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fafafa;
+  line-height: 1.7;
+}
 
-    header {
-      background: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #222;
-      z-index: 1000;
-      padding: 10px 0;
-    }
+main {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+}
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+/* ===== TAB STYLES (SAFE) ===== */
+.tab-headers {
+  display: flex;
+  gap: 30px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 25px;
+}
 
-    nav ul li {
-      margin: 0 15px;
-    }
+.tab-title {
+  cursor: pointer;
+  margin: 0;
+  padding-bottom: 8px;
+  opacity: 0.6;
+}
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
+.tab-title.active {
+  opacity: 1;
+  border-bottom: 3px solid #ff6347;
+}
 
-    main {
-      display: flex;
-      padding: 100px 20px 20px;
-      gap: 20px;
-    }
+.tab-content {
+  display: none;
+}
 
-    article {
-      flex: 3;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
+.tab-content.active {
+  display: block;
+}
 
-    aside {
-      flex: 1.2;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      height: fit-content;
-    }
+iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 8px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: white;
-      margin-top: 40px;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 12px;
-    }
-
-    th, td {
-      border: 1px solid #333;
-      padding: 8px;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    /* ===== TAB STYLE ===== */
-    .tab-buttons {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tab-buttons button {
-      padding: 10px 16px;
-      border: none;
-      cursor: pointer;
-      background: #222;
-      color: white;
-      font-weight: 600;
-      border-radius: 6px;
-    }
-
-    .tab-buttons button.active {
-      background: #ff6347;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+  margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>我的時尚夢想／Dark Fashion Fan Page</h1>
+  <h1>我的時尚夢想 / Dark Fashion Project</h1>
 </header>
-
-<nav>
-  <ul>
-    <li><a href="#">首頁</a></li>
-  </ul>
-</nav>
 
 <main>
 
-<article>
+<!-- ===== TABS ===== -->
+<div class="tab-wrapper">
 
-  <!-- ===== TABS ===== -->
-  <div class="tab-buttons">
-    <button class="active" onclick="openTab(event,'resume')">個人履歷</button>
-    <button onclick="openTab(event,'igpage')">IG 粉絲專頁</button>
-    <button onclick="openTab(event,'igpost')">IG 精選貼文</button>
+  <div class="tab-headers">
+    <h2 class="tab-title active" onclick="openTab(this,'resume')">個人履歷</h2>
+    <h2 class="tab-title" onclick="openTab(this,'ig')">Instagram 粉絲專頁</h2>
   </div>
 
   <!-- ===== RESUME TAB ===== -->
@@ -164,96 +94,45 @@
 
     <section>
       <p>
-        歡迎來到「我的時尚夢想」，這是我作為一名時尚設計系學生的個人網站，也是我實現夢想的一個小小舞台。
+        歡迎來到「我的時尚夢想」，這是我作為一名時尚設計系學生的個人網站，
+        也是我紀錄學習與風格成長的平台。
       </p>
       <p>
-        我來自印尼，能使用印尼文、英文和中文三種語言溝通，這讓我能接觸不同文化，也讓我在設計中融入更多元的視覺元素。
-      </p>
-      <p>
-        這個網站是我的學習紀錄，包含縫紉、手繪、打版到 CLO 3D 的學習過程。
+        我來自印尼，能使用印尼文、英文與中文溝通，
+        這讓我能接觸不同文化，並融入多元設計視角。
       </p>
     </section>
 
     <section>
-      <h2>技能專長</h2>
+      <h3>技能專長</h3>
       <ul>
-        <li>語言能力：印尼文、英文、中文</li>
-        <li>時尚設計：布料挑選、打版、縫紉</li>
+        <li>語言：印尼文、英文、中文</li>
+        <li>設計：打版、縫紉、服裝手繪</li>
         <li>軟體：Illustrator、Photoshop、CLO 3D</li>
       </ul>
     </section>
 
     <section>
-      <h2>設計理念</h2>
-      <p>暗黑美學中的細節與情緒。</p>
+      <h3>設計理念</h3>
+      <p>
+        以暗黑美學為核心，透過材質、剪裁與細節呈現情緒與故事感，
+        追求 Minimal yet Dramatic 的視覺風格。
+      </p>
     </section>
 
     <section>
-      <h2>行銷策略</h2>
+      <h3>行銷策略</h3>
       <ul>
-        <li>主題式貼文</li>
-        <li>Reels 提升觸及</li>
-        <li>品牌合作</li>
+        <li>主題式貼文規劃</li>
+        <li>Reels 提升曝光</li>
+        <li>暗黑風品牌合作</li>
       </ul>
     </section>
 
   </div>
 
-  <!-- ===== IG PAGE TAB ===== -->
-  <div id="igpage" class="tab-content">
-    <iframe src="https://www.instagram.com/f4shionf4np4ge/embed"></iframe>
-  </div>
-
-  <!-- ===== IG POST TAB ===== -->
-  <div id="igpost" class="tab-content">
-    <iframe src="https://www.instagram.com/p/DQHciwSknnZ/embed"></iframe>
-  </div>
-
-</article>
-
-<aside>
-  <h3>關於我</h3>
-  <p>時尚設計系學生，專注暗黑美學。</p>
-</aside>
-
-</main>
-
-<footer>
-  <p>© 2025 我的時尚夢想</p>
-</footer>
-
-<script>
-function openTab(evt, tabId) {
-  const contents = document.querySelectorAll('.tab-content');
-  const buttons = document.querySelectorAll('.tab-buttons button');
-
-  contents.forEach(c => c.classList.remove('active'));
-  buttons.forEach(b => b.classList.remove('active'));
-
-  document.getElementById(tabId).classList.add('active');
-  evt.target.classList.add('active');
-}
-</script>
-
-</body>
-</html>
-
-<!-- TAB SWITCHING -->
-<div class="tab-wrapper">
-
-  <!-- TAB HEADERS (using h2) -->
-  <div class="tab-headers">
-    <h2 class="tab-title active" onclick="openTab('tab-resume')">個人履歷</h2>
-    <h2 class="tab-title" onclick="openTab('tab-ig')">Instagram 粉絲專頁</h2>
-  </div>
-
-  <!-- TAB CONTENT: RESUME -->
-  <div id="tab-resume" class="tab-content active">
-    <!-- KEEP ALL YOUR ORIGINAL CONTENT HERE -->
-  </div>
-
-  <!-- TAB CONTENT: IG -->
-  <div id="tab-ig" class="tab-content">
+  <!-- ===== IG TAB ===== -->
+  <div id="ig" class="tab-content">
     <iframe
       src="https://www.instagram.com/f4shionf4np4ge/embed"
       loading="lazy">
@@ -262,3 +141,24 @@ function openTab(evt, tabId) {
 
 </div>
 
+</main>
+
+<footer>
+  <p>© 2025 我的時尚夢想</p>
+</footer>
+
+<script>
+function openTab(el, tabId) {
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-title').forEach(title => {
+    title.classList.remove('active');
+  });
+  document.getElementById(tabId).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+
+</body>
+</html>
