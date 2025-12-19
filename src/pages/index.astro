@@ -1,76 +1,67 @@
+---
+// index.astro
+---
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的時尚夢想｜個人網頁</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的時尚夢想｜個人網頁</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      line-height: 1.7;
+    }
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fafafa;
-  line-height: 1.7;
-}
+    header {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
 
-header {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
+    main {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+    }
 
-main {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: auto;
-  background: white;
-  border-radius: 8px;
-}
+    /* ===== TAB STYLES (SAFE) ===== */
+    .tab-headers {
+      display: flex;
+      gap: 30px;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 25px;
+    }
 
-/* ===== TAB STYLES (SAFE) ===== */
-.tab-headers {
-  display: flex;
-  gap: 30px;
-  border-bottom: 2px solid #ddd;
-  margin-bottom: 25px;
-}
+    .tab-title {
+      cursor: pointer;
+      margin: 0;
+      padding-bottom: 8px;
+      opacity: 0.6;
+      text-decoration: none;
+      color: inherit;
+    }
 
-.tab-title {
-  cursor: pointer;
-  margin: 0;
-  padding-bottom: 8px;
-  opacity: 0.6;
-}
+    .tab-title.active {
+      opacity: 1;
+      border-bottom: 3px solid #ff6347;
+    }
 
-.tab-title.active {
-  opacity: 1;
-  border-bottom: 3px solid #ff6347;
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 8px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  color: white;
-  margin-top: 40px;
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
@@ -85,37 +76,41 @@ footer {
 <div class="tab-wrapper">
 
   <div class="tab-headers">
-    <h2 class="tab-title active" onclick="openTab(this,'resume')">個人履歷</h2>
-    <h2 class="tab-title" onclick="openTab(this,'ig')">Instagram 粉絲專頁</h2>
+    <h2 class="tab-title active">
+      <a href="/" style="text-decoration: none; color: inherit;">個人履歷</a>
+    </h2>
+    <h2 class="tab-title">
+      <a href="/instagram" style="text-decoration: none; color: inherit;">Instagram 粉絲專頁</a>
+    </h2>
   </div>
 
   <!-- ===== RESUME TAB ===== -->
-  <div id="resume" class="tab-content active">
+  <div id="resume">
 
     <section>
       <p>
-        歡迎來到「我的時尚夢想」，這是我作為一名時尚設計系學生的個人網站，
+        歡迎來到「我的時尚夢想」,這是我作為一名時尚設計系學生的個人網站,
         也是我紀錄學習與風格成長的平台。
       </p>
       <p>
-        我來自印尼，能使用印尼文、英文與中文溝通，
-        這讓我能接觸不同文化，並融入多元設計視角。
+        我來自印尼,能使用印尼文、英文與中文溝通,
+        這讓我能接觸不同文化,並融入多元設計視角。
       </p>
     </section>
 
     <section>
       <h3>技能專長</h3>
       <ul>
-        <li>語言：印尼文、英文、中文</li>
-        <li>設計：打版、縫紉、服裝手繪</li>
-        <li>軟體：Illustrator、Photoshop、CLO 3D</li>
+        <li>語言:印尼文、英文、中文</li>
+        <li>設計:打版、縫紉、服裝手繪</li>
+        <li>軟體:Illustrator、Photoshop、CLO 3D</li>
       </ul>
     </section>
 
     <section>
       <h3>設計理念</h3>
       <p>
-        以暗黑美學為核心，透過材質、剪裁與細節呈現情緒與故事感，
+        以暗黑美學為核心,透過材質、剪裁與細節呈現情緒與故事感,
         追求 Minimal yet Dramatic 的視覺風格。
       </p>
     </section>
@@ -131,14 +126,6 @@ footer {
 
   </div>
 
-  <!-- ===== IG TAB ===== -->
-  <div id="ig" class="tab-content">
-    <iframe
-      src="https://www.instagram.com/f4shionf4np4ge/embed"
-      loading="lazy">
-    </iframe>
-  </div>
-
 </div>
 
 </main>
@@ -146,19 +133,6 @@ footer {
 <footer>
   <p>© 2025 我的時尚夢想</p>
 </footer>
-
-<script>
-function openTab(el, tabId) {
-  document.querySelectorAll('.tab-content').forEach(tab => {
-    tab.classList.remove('active');
-  });
-  document.querySelectorAll('.tab-title').forEach(title => {
-    title.classList.remove('active');
-  });
-  document.getElementById(tabId).classList.add('active');
-  el.classList.add('active');
-}
-</script>
 
 </body>
 </html>
