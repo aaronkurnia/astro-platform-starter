@@ -1,57 +1,82 @@
----
-// index.astro
----
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的時尚夢想｜個人網頁</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的時尚夢想｜個人粉絲專頁</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #fafafa;
+      padding: 0;
       line-height: 1.7;
+      background: #fafafa;
     }
 
+    /* Header */
     header {
       background: #111;
-      color: #fff;
-      text-align: center;
+      color: white;
       padding: 20px;
+      text-align: center;
     }
 
-    main {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-      background: white;
-      border-radius: 8px;
+    /* Navigation Menu */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      z-index: 1000;
+      padding: 10px 0;
     }
 
-    /* ===== TAB STYLES (SAFE) ===== */
-    .tab-headers {
+    nav ul {
       display: flex;
-      gap: 30px;
-      border-bottom: 2px solid #ddd;
-      margin-bottom: 25px;
-    }
-
-    .tab-title {
-      cursor: pointer;
+      justify-content: center;
       margin: 0;
-      padding-bottom: 8px;
-      opacity: 0.6;
-      text-decoration: none;
-      color: inherit;
+      padding: 0;
+      list-style: none;
     }
 
-    .tab-title.active {
-      opacity: 1;
-      border-bottom: 3px solid #ff6347;
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6347;
+    }
+
+    /* Offset for fixed nav */
+    main {
+      display: flex;
+      padding: 100px 20px 20px 20px; /* top padding accounts for nav height */
+      gap: 20px;
+    }
+
+    article {
+      flex: 3;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    aside {
+      flex: 1.2;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      height: fit-content;
     }
 
     footer {
@@ -61,78 +86,242 @@
       color: white;
       margin-top: 40px;
     }
+
+    /* Tables */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>我的時尚夢想 / Dark Fashion Project</h1>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>我的時尚夢想／Dark Fashion Fan Page</h1>
+  </header>
 
-<main>
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="#highlights">重點摘要</a></li>
+      <li><a href="#concept">設計理念</a></li>
+      <li><a href="#strategy">行銷策略</a></li>
+      <li><a href="#outcomes">預期效果</a></li>
+      <li><a href="#stats">成效追蹤</a></li>
+      <li><a href="#post-list">發文清單</a></li>
+    </ul>
+  </nav>
 
-<!-- ===== TABS ===== -->
-<div class="tab-wrapper">
+  <!-- MAIN CONTENT -->
+  <main>
 
-  <div class="tab-headers">
-    <h2 class="tab-title active">
-      <a href="/" style="text-decoration: none; color: inherit;">個人履歷</a>
-    </h2>
-    <h2 class="tab-title">
-      <a href="/instagram" style="text-decoration: none; color: inherit;">Instagram 粉絲專頁</a>
-    </h2>
-  </div>
+    <!-- ARTICLE (MAIN CONTENT) -->
+    <article>
 
-  <!-- ===== RESUME TAB ===== -->
-  <div id="resume">
+      <section>
+        <p>
+          歡迎來到 "我的時尚夢想"，這是我作為一名時尚設計系學生的個人網站，也是我實現夢想的一個小小舞台。我一直對時尚充滿熱情，因為它不只是衣服，更是一種語言，一種讓人用穿著表達自我、傳達情感與態度的方式。
+        </p>
 
-    <section>
-      <p>
-        歡迎來到「我的時尚夢想」,這是我作為一名時尚設計系學生的個人網站,
-        也是我紀錄學習與風格成長的平台。
-      </p>
-      <p>
-        我來自印尼,能使用印尼文、英文與中文溝通,
-        這讓我能接觸不同文化,並融入多元設計視角。
-      </p>
-    </section>
+        <p>
+          我來自印尼，能使用印尼文、英文和中文三種語言溝通，這讓我能接觸不同文化，也讓我在設計中融入更多元的視覺元素。
+        </p>
 
-    <section>
-      <h3>技能專長</h3>
+        <p>
+          這個網站是我的學習紀錄，包含縫紉、手繪、打版到 CLO 3D 的學習過程，是我紀錄作品與風格成長的地方。
+        </p>
+      </section>
+
+      <section>
+        <h2>技能專長</h2>
+        <ul>
+          <li>語言能力：印尼文、英文、中文</li>
+          <li>時尚設計：布料挑選、打版、縫紉、手繪草圖</li>
+          <li>軟體：Illustrator、Photoshop、CLO 3D</li>
+          <li>創意表現：色彩感強，能製作作品集</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>學習與成就（四年計畫）</h2>
+        <ol>
+          <li>第一年：色彩、手繪、布料基礎、縫紉技巧</li>
+          <li>第二年：打版、服裝作品、數位設計工具</li>
+          <li>第三年：建立個人風格，學習永續時尚與品牌</li>
+          <li>第四年：畢業系列、畢展與證照準備</li>
+        </ol>
+      </section>
+
+      <section id="highlights">
+        <h2>粉絲專頁重點摘要（Key Highlights）</h2>
+        <p>
+          IG 粉絲專頁以黑暗系時尚為主題，內容包括穿搭、暗黑單品介紹、細節攝影與氛圍照，吸引哥德風、暗黑美學、街頭黑潮愛好者。
+        </p>
+      </section>
+
+      <section id="concept">
+        <h2>設計理念（Design Concept）</h2>
+        <p>核心概念：暗黑美學中的細節與情緒。</p>
+        <ul>
+          <li>Minimal yet Dramatic</li>
+          <li>Texture First</li>
+          <li>Story-driven Visuals</li>
+        </ul>
+      </section>
+
+      <section id="strategy">
+        <h2>行銷策略（Marketing Strategy）</h2>
+        <ol>
+          <li>
+            主題式貼文分類
+            <ul>
+              <li>暗黑穿搭日常</li>
+              <li>單品介紹</li>
+              <li>材質研究</li>
+              <li>氛圍美學攝影</li>
+            </ul>
+          </li>
+          <li>
+            Reels 提升觸及
+            <ul>
+              <li>穿搭動態</li>
+              <li>走秀短片</li>
+              <li>換裝影片</li>
+            </ul>
+          </li>
+          <li>
+            合作企劃
+            <ul>
+              <li>暗黑飾品品牌</li>
+              <li>小眾設計師</li>
+              <li>Techwear / Punk 創作者</li>
+            </ul>
+          </li>
+          <li>
+            社群互動推廣
+            <ul>
+              <li>主題 Hashtag</li>
+              <li>留言回覆</li>
+              <li>限動 Q&A</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section id="outcomes">
+        <h2>預期效果（Expected Outcomes）</h2>
+        <ul>
+          <li>提升粉絲與觸及</li>
+          <li>累積暗黑風忠實觀眾</li>
+          <li>提高互動率</li>
+          <li>增加品牌合作機會</li>
+          <li>建立個人風格辨識度</li>
+        </ul>
+      </section>
+
+      <section id="stats">
+        <h2>成效追蹤</h2>
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>貼文</th><th>觸及</th><th>按讚</th><th>留言</th><th>分享</th><th>總互動</th><th>互動率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Post 1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>3</td><td>100%</td></tr>
+            <tr><td>Post 2</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>100%</td></tr>
+            <tr><td>Post 3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>100%</td></tr>
+            <tr><td>Post 4</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>100%</td></tr>
+            <tr><td>Post 5</td><td>1</td><td>1</td><td>1</td><td>0</td><td>2</td><td>100%</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="post-list">
+        <h2>發文清單（Post List）</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>主題</th>
+              <th>貼文類型</th>
+              <th>平台</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-10-22</td>
+              <td>暗黑風皮革外套介紹</td>
+              <td>Regular Post (Pic)</td>
+              <td>Instagram</td>
+            </tr>
+            <tr>
+              <td>2025-10-29</td>
+              <td>哥德風襯衫搭配示範</td>
+              <td>Regular Post (Pic)</td>
+              <td>Instagram</td>
+            </tr>
+            <tr>
+              <td>2025-11-05</td>
+              <td>黑色飾品細節特寫</td>
+              <td>Regular Post (Pic)</td>
+              <td>Instagram</td>
+            </tr>
+            <tr>
+              <td>2025-11-12</td>
+              <td>暗黑系長裙穿搭分享</td>
+              <td>Regular Post (Pic)</td>
+              <td>Instagram</td>
+            </tr>
+            <tr>
+              <td>2025-11-19</td>
+              <td>黑色皮靴搭配示範</td>
+              <td>Regular Post (Pic)</td>
+              <td>Instagram</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </article>
+
+    <!-- ASIDE (SIDE INFO) -->
+    <aside>
+      <h3>關於我</h3>
+      <p>時尚設計系學生，專攻暗黑美學與材質視覺研究。</p>
+
+      <h3>快速連結</h3>
       <ul>
-        <li>語言:印尼文、英文、中文</li>
-        <li>設計:打版、縫紉、服裝手繪</li>
-        <li>軟體:Illustrator、Photoshop、CLO 3D</li>
+        <li><a href="#highlights">粉絲頁重點</a></li>
+        <li><a href="#strategy">行銷策略</a></li>
+        <li><a href="#content-calendar">內容行事曆</a></li>
       </ul>
-    </section>
+    </aside>
 
-    <section>
-      <h3>設計理念</h3>
-      <p>
-        以暗黑美學為核心,透過材質、剪裁與細節呈現情緒與故事感,
-        追求 Minimal yet Dramatic 的視覺風格。
-      </p>
-    </section>
+  </main>
 
-    <section>
-      <h3>行銷策略</h3>
-      <ul>
-        <li>主題式貼文規劃</li>
-        <li>Reels 提升曝光</li>
-        <li>暗黑風品牌合作</li>
-      </ul>
-    </section>
-
-  </div>
-
-</div>
-
-</main>
-
-<footer>
-  <p>© 2025 我的時尚夢想</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 我的時尚夢想｜Dark Fashion Project</p>
+  </footer>
 
 </body>
 </html>
