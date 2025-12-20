@@ -24,34 +24,43 @@
       padding: 20px;
     }
 
+    /* Navigation Menu */
+    nav {
+      background: #222;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    nav ul li a:hover {
+      color: #ff6347;
+    }
+
     main {
       padding: 40px 20px;
       max-width: 1100px;
       margin: auto;
       background: white;
       border-radius: 8px;
-    }
-
-    /* ===== TAB STYLES (SAFE) ===== */
-    .tab-headers {
-      display: flex;
-      gap: 30px;
-      border-bottom: 2px solid #ddd;
-      margin-bottom: 25px;
-    }
-
-    .tab-title {
-      cursor: pointer;
-      margin: 0;
-      padding-bottom: 8px;
-      opacity: 0.6;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .tab-title.active {
-      opacity: 1;
-      border-bottom: 3px solid #ff6347;
     }
 
     iframe {
@@ -77,30 +86,25 @@
   <h1>我的時尚夢想 / Dark Fashion Project</h1>
 </header>
 
+<!-- NAVIGATION -->
+<nav>
+  <ul>
+    <li><a href="/">個人履歷</a></li>
+    <li><a href="/instagram">Instagram 專頁</a></li>
+    <li><a href="/design-concept">設計理念</a></li>
+    <li><a href="/marketing-strategy">行銷策略</a></li>
+    <li><a href="/expected-outcomes">預期效果</a></li>
+    <li><a href="/performance-tracking">成效追蹤</a></li>
+    <li><a href="/post-list">發文清單</a></li>
+  </ul>
+</nav>
+
 <main>
-
-<!-- ===== TABS ===== -->
-<div class="tab-wrapper">
-
-  <div class="tab-headers">
-    <h2 class="tab-title">
-      <a href="/" style="text-decoration: none; color: inherit;">個人履歷</a>
-    </h2>
-    <h2 class="tab-title active">
-      <a href="/instagram" style="text-decoration: none; color: inherit;">Instagram 粉絲專頁</a>
-    </h2>
-  </div>
-
-  <!-- ===== IG TAB ===== -->
-  <div id="ig">
-    <iframe
-      src="https://www.instagram.com/f4shionf4np4ge/embed"
-      loading="lazy">
-    </iframe>
-  </div>
-
-</div>
-
+  <h2>Instagram 粉絲專頁</h2>
+  <iframe
+    src="https://www.instagram.com/f4shionf4np4ge/embed"
+    loading="lazy">
+  </iframe>
 </main>
 
 <footer>
