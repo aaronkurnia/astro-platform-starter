@@ -1,0 +1,186 @@
+---
+// post-list.astro
+---
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>發文清單｜我的時尚夢想</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    nav ul li a:hover {
+      color: #ff6347;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .post-type {
+      background: #e3f2fd;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>我的時尚夢想 / Dark Fashion Project</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">個人履歷</a></li>
+    <li><a href="/instagram">Instagram 專頁</a></li>
+    <li><a href="/design-concept">設計理念</a></li>
+    <li><a href="/marketing-strategy">行銷策略</a></li>
+    <li><a href="/expected-outcomes">預期效果</a></li>
+    <li><a href="/performance-tracking">成效追蹤</a></li>
+    <li><a href="/post-list">發文清單</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>發文清單（Post List）</h1>
+  
+  <section>
+    <p>以下是 Instagram 粉絲專頁的發文規劃與記錄：</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>主題</th>
+          <th>貼文類型</th>
+          <th>平台</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-10-22</td>
+          <td>暗黑風皮革外套介紹</td>
+          <td><span class="post-type">Regular Post (Pic)</span></td>
+          <td>Instagram</td>
+        </tr>
+        <tr>
+          <td>2025-10-29</td>
+          <td>哥德風襯衫搭配示範</td>
+          <td><span class="post-type">Regular Post (Pic)</span></td>
+          <td>Instagram</td>
+        </tr>
+        <tr>
+          <td>2025-11-05</td>
+          <td>黑色飾品細節特寫</td>
+          <td><span class="post-type">Regular Post (Pic)</span></td>
+          <td>Instagram</td>
+        </tr>
+        <tr>
+          <td>2025-11-12</td>
+          <td>暗黑系長裙穿搭分享</td>
+          <td><span class="post-type">Regular Post (Pic)</span></td>
+          <td>Instagram</td>
+        </tr>
+        <tr>
+          <td>2025-11-19</td>
+          <td>黑色皮靴搭配示範</td>
+          <td><span class="post-type">Regular Post (Pic)</span></td>
+          <td>Instagram</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>未來發文規劃</h2>
+    <ul>
+      <li><strong>每週二、五發文</strong> - 維持穩定的內容更新頻率</li>
+      <li><strong>月主題規劃</strong> - 每月專注一個特定的暗黑風格主題</li>
+      <li><strong>季節性內容</strong> - 配合季節推出相應的穿搭建議</li>
+      <li><strong>互動性內容</strong> - 定期舉辦問答、投票等互動活動</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 我的時尚夢想｜Dark Fashion Project</p>
+</footer>
+
+</body>
+</html>
